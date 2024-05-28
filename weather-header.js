@@ -1,4 +1,4 @@
-let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=tooele&appid={f8b44de7b63b899bea52a029982c37e1}`
+let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=tooele&appid=f8b44de7b63b899bea52a029982c37e1`
 fetch(apiurl)
 .then((response) => response.json())
 .then((jsObject) => {
@@ -19,3 +19,17 @@ const wc = 35.74 + 0.6215 * T - 35.75 * W ** 0.16 + 0.4275 * T * W ** 0.16;
 document.getElementById("current-windChill").textContent = Math.floor(wc);
 
 });  
+
+const URL = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a60a13208b54464ab43f88bc6aaabd06`
+fetch(URL)
+.then((response) => response.json())
+.then((jsObject) => {
+    console.log(jsObject);
+
+    document.getElementByClass("article").textContent = jsObject.articles;
+    document.getElementById("header-article").textContent = jsObject.source;
+    const more = jsObject.article[0].description;
+    document.getElementById("header-desc").textContent = descrip;
+
+
+})
