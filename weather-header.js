@@ -18,4 +18,4 @@ Math.ceil(jsObject.wind.speed));
 const wc = 35.74 + 0.6215 * T - 35.75 * W ** 0.16 + 0.4275 * T * W ** 0.16;
 document.getElementById("current-windChill").textContent = Math.floor(wc);
 
-}); 
+});  
